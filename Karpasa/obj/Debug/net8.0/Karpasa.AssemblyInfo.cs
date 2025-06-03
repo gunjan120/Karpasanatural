@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Karpasa")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a8d8b7861c35a1023e2f5bb7d19c7cb388689b2e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f58889fe4830d24bd7a2cccd17cc20f423dfa1e8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Karpasa")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Karpasa")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
