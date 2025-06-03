@@ -1,0 +1,65 @@
+﻿@model Karpasa.Models.ContactViewModel
+
+@{
+    ViewData["Title"] = "Contact Us";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (@ViewBag.Message!=null)
+{
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">@ViewBag.Message</h4>
+        
+    </div>
+};
+<section class="container mt-5 mb-5">
+    <div class="row">
+        <!-- Contact Info -->
+        <div class="col-md-6 mb-4">
+            <h2>Contact Us</h2>
+            <p class="text-muted">We’d love to hear from you. Reach out with questions, feedback, or to learn more about our fabrics and fashion line.</p>
+
+            <ul class="list-unstyled">
+                <li><strong>📍 Address:</strong> Karpasa Natural Industry Pvt. Ltd.,Ranighat-09, Birgunj, Nepal</li>
+                <li><strong>📞 Phone:</strong> +977-9762188351</li>
+                <li><strong>📧 Email:</strong> <a href="mailto:info@karpasanatural.com.np">info@karpasanatural.com.np</a></li>
+                @* <li><strong>🕒 Office Hours:</strong> Sunday – Friday: 9 AM – 6 PM</li> *@
+            </ul>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-md-6">
+            <h4>Send Us a Message</h4>
+            <form asp-area="Blogs" asp-controller="Home" asp-action="ContactUS" method="post">
+                @Html.AntiForgeryToken()                
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input asp-for="Name" class="form-control" placeholder="Enter Name"/>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label"></label>
+                    <input asp-for="Email" class="form-control" placeholder="Enter Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Message" class="form-label"></label>
+                    <textarea asp-for="Message" class="form-control" placeholder="Enter Message"></textarea>
+                    <span asp-validation-for="Message" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- Map -->
+    @* <div class="mt-5">
+        <h4>Find Us on the Map</h4>
+        <div class="ratio ratio-16x9">
+            <iframe src="https://maps.google.com/maps?q=Kathmandu,Nepal&z=15&output=embed" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div> *@
+</section>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

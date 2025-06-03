@@ -1,0 +1,125 @@
+﻿ @model Karpasa.Models.ContactViewModel
+
+@{
+    ViewData["Title"] = "Contact Us";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .brand-blue {
+        color: #09268A !important;
+    }
+
+    .brand-blue-bg {
+        background-color: #09268A !important;
+    }
+
+    .brand-blue-border {
+        border-color: #09268A !important;
+    }
+
+    .btn-brand-blue {
+        background-color: #09268A;
+        border-color: #09268A;
+        color: #fff;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-brand-blue:hover,
+        .btn-brand-blue:focus {
+            background-color: #071f65;
+            border-color: #071f65;
+            color: #fff;
+        }
+
+    .icon-brand-blue {
+        color: #09268A;
+    }
+</style>
+
+<section class="container py-5">
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold brand-blue"><i class="fas fa-leaf me-2 icon-brand-blue"></i>Contact Us</h1>
+        <p class="lead text-muted">We’re here to help you connect with sustainable comfort.</p>
+    </div>
+
+    <div class="row g-5">
+        <!-- Contact Information -->
+        <div class="col-md-6">
+            <div class="bg-light p-4 rounded-4 shadow-sm h-100">
+                <h2 class="mb-3 brand-blue"><i class="fas fa-info-circle me-2 icon-brand-blue"></i>Get in Touch</h2>
+                <p class="text-muted">
+                    We’d love to hear from you. Whether it's questions, feedback, or anything in between — reach out and let’s connect!
+                </p>
+                <ul class="list-unstyled fs-5 mt-4">
+                    <li class="mb-3">
+                        <i class="fas fa-map-marker-alt me-2 icon-brand-blue"></i>
+                        <strong>Address:</strong><br />
+                        Karpasa Natural Industry Pvt. Ltd., Birgunj, Nepal
+                    </li>
+                    <li class="mb-3">
+                        <i class="fas fa-phone me-2 icon-brand-blue"></i>
+                        <strong>Phone:</strong> +977-9762188351
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope me-2 icon-brand-blue"></i>
+                        <strong>Email:</strong> <a href="mailto:info@karpasanatural.com.np" class="brand-blue">info@karpasanatural.com.np</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-md-6">
+            <div class="bg-white p-4 rounded-4 shadow border brand-blue-border">
+                <h2 class="mb-4 brand-blue"><i class="fas fa-paper-plane me-2 icon-brand-blue"></i>Send Us a Message</h2>
+
+                @if (ViewBag.Message != null)
+                {
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        @ViewBag.Message
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+
+                <form asp-area="Blogs" asp-controller="Home" asp-action="ContactUS" method="post">
+                    @Html.AntiForgeryToken()
+
+                    <div class="mb-3">
+                        <label asp-for="Name" class="form-label fw-semibold text-secondary"></label>
+                        <input asp-for="Name" class="form-control rounded-3" placeholder="Enter your name" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label fw-semibold text-secondary"></label>
+                        <input asp-for="Email" class="form-control rounded-3" placeholder="Enter your email" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Message" class="form-label fw-semibold text-secondary"></label>
+                        <textarea asp-for="Message" class="form-control rounded-3" rows="5" placeholder="Write your message here..."></textarea>
+                        <span asp-validation-for="Message" class="text-danger"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-brand-blue px-4 py-2 rounded-pill">
+                        <i class="fas fa-paper-plane me-2"></i>Submit
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional: Google Map -->
+    @* <div class="mt-5">
+    <h4 class="mb-3 brand-blue"><i class="fas fa-map me-2 icon-brand-blue"></i>Find Us on the Map</h4>
+    <div class="ratio ratio-16x9 rounded-4 shadow-sm">
+    <iframe src="https://maps.google.com/maps?q=Birgunj,Nepal&z=15&output=embed" frameborder="0" allowfullscreen></iframe>
+    </div>
+    </div> *@
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

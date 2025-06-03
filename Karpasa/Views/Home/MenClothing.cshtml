@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Men's Clothing";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .brand-blue {
+        color: #09268A !important;
+    }
+
+    .icon-brand-blue {
+        color: #09268A;
+    }
+
+    .maintenance-box {
+        background-color: #f8f9fa;
+        border-left: 5px solid #09268A;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+</style>
+
+<div class="container py-5 text-center">
+    <i class="fas fa-tools fa-3x icon-brand-blue mb-3"></i>
+    <h1 class="brand-blue fw-bold mb-3">@ViewData["Title"]</h1>
+
+    <div class="maintenance-box mx-auto" style="max-width: 600px;">
+        <h4 class="brand-blue"><i class="fas fa-exclamation-triangle me-2 icon-brand-blue"></i> Under Maintenance</h4>
+        <p class="text-muted fs-5">
+            We’re currently upgrading the <strong>Men’s Clothing</strong> section to serve you better. <br />
+            Please check back soon for a fresh collection of sustainable styles!
+        </p>
+    </div>
+</div>
