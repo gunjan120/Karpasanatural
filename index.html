@@ -1,192 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karpasa Natural</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <style>
-        .carousel-inner img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", sans-serif;
+            background-color: #f4f6ff;
         }
 
-        .carousel-caption {
-            background: rgba(0,0,0,0.5);
-            border-radius: 10px;
-            padding: 10px;
-        }
-.navbar-brand img {
-            height: 40px;
-        }
-        footer {
+        /* Top Bar */
+        .top-bar {
             background: #09268A;
-            color: white;
-            padding: 20px;
+            color: #fff;
             text-align: center;
+            padding: 6px 0;
+            font-size: 14px;
+            overflow: hidden;
         }
 
-        footer a {
-            margin: 0 15px;
+        .top-bar .sl {
+            white-space: nowrap;
+            display: inline-block;
+            animation: slide-text 12s linear infinite;
+        }
+
+        @keyframes slide-text {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Logo */
+        .header-logo img {
+            height: 70px;
+        }
+
+        /* Navigation */
+        .nav-link {
+            font-weight: 500;
+            color: #09268A !important;
+        }
+
+        .nav-link:hover {
+            color: #000 !important;
+        }
+
+        /* Icons */
+        .header-icons i {
+            font-size: 20px;
+            margin-left: 18px;
+            cursor: pointer;
+            color: #4c4c4c;
+        }
+
+        @media(max-width: 768px) {
+            .header-logo img {
+                height: 55px;
+            }
+        }
+
+        /* Responsive Images */
+        .img-fluid {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Premium Footer Styles */
+        .custom-footer {
+            background: #09268A;
             color: #fff;
-            text-decoration: none;
+            padding: 60px 0 30px;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        .footer-title {
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #f1f1f1;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li a {
+            color: #d0d0d0;
+            font-size: 14px;
+            padding: 4px 0;
+            display: block;
             transition: color 0.3s;
         }
 
-        footer a:hover {
-            color: #ffc107;
+        .footer-links li a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .footer-contact p {
+            font-size: 14px;
+            color: #d0d0d0;
+            margin: 6px 0;
+        }
+
+        .footer-social i {
+            font-size: 18px;
+            color: #d0d0d0;
+            margin-right: 15px;
+            transition: color 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+
+        .footer-social i:hover {
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        @media(max-width: 768px) {
+            .footer-column {
+                margin-bottom: 30px;
+                text-align: center;
+            }
+            .footer-social {
+                justify-content: center;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #09268A;">
-        <a class="navbar-brand" href="index.html">
-            <img src="images/logo.jpg" alt="Karpasa Logo">
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="sl">
+            KARPASA NATURAL INDUSTRY PVT. LTD | FROM FABRIC TO FASHION QUALITY IN EVERY FOLD | HANDCRAFTED IN NEPAL
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md" style="background:#cad5fa; border-bottom:1px solid #e6e3df;">
+        <!-- Logo -->
+        <a class="navbar-brand header-logo" href="index.html">
+            <img src="images/logo.jpg" alt="Karpasa Natural">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
+
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu">
+            <i class="fa-solid fa-bars" style="font-size:25px;"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="AboutUs.html">About</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Collection</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="Shawls.html">Shawls</a>
-                         <!--<a class="dropdown-item" href="#">Link 2</a>
-                        <a class="dropdown-item" href="#">Link 3</a>-->
-                    </div>
-                </li>
-                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Services</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="Whatwedo.html">What We Do</a>
-                        <!--<a class="dropdown-item" href="#">Link 2</a>
-                        <a class="dropdown-item" href="#">Link 3</a>-->
-                    </div>
-                </li>
+
+        <!-- Collapsible Menu -->
+        <div class="collapse navbar-collapse justify-content-center" id="navMenu">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li>
                 <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="Service.html">Collection</a></li>
             </ul>
         </div>
+      
+      <div class="header-icons d-none d-md-flex">
+    <img src="images/flag.jpg" alt="Nepal Flag" style="height:25px; cursor:pointer;">
+</div>
+
+        <!-- Icons Right
+        <div class="header-icons d-none d-md-flex">
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-regular fa-user"></i>
+            <i class="fa-solid fa-bag-shopping"></i>
+        </div> -->
     </nav>
 
-<!-- CAROUSEL -->
-<div id="demo" class="carousel slide" data-ride="carousel">
-    <ul class="carousel-indicators">
-        <li data-target="#demo" data-slide-to="0" class="active"></li>
-        <li data-target="#demo" data-slide-to="1"></li>
-        <li data-target="#demo" data-slide-to="2"></li>
-    </ul>
+    <!-- Main Content -->
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-lg-12">
+                <img src="images/87.png" class="img-fluid" alt="Karpasa Natural">
+            </div>
+        </div>
 
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="images/ban-03.png" alt="Los Angeles">
-          
-                <!--<h3>Los Angeles</h3>
-                <p>We had such a great time in LA!</p>-->
-            
+        <div class="row mt-3">
+            <div class="col-sm-6">
+                <img src="images/4.jpg" class="img-fluid" alt="Karpasa Natural">
+            </div>
+            <div class="col-sm-6">
+                <img src="images/5.jpg" class="img-fluid" alt="Karpasa Natural">
+            </div>
         </div>
-        <div class="carousel-item">
-            <img src="images/ban-03.png" alt="Chicago">
-          
-                <!--<h3>Los Angeles</h3>
-                <p>We had such a great time in LA!</p>-->
-            
-        </div>
-        <div class="carousel-item">
-            <img src="images/ban-03.png" alt="New York">
-            
-                  <!--<h3>Los Angeles</h3>
-                <p>We had such a great time in LA!</p>-->
-             
+
+        <div class="row mt-3">
+            <div class="col-sm-6">
+                <img src="images/2.jpg" class="img-fluid" alt="Karpasa Natural">
+            </div>
+            <div class="col-sm-6">
+                <img src="images/6.jpg" class="img-fluid" alt="Karpasa Natural">
+            </div>
         </div>
     </div>
 
-    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#demo" data-slide="next">
-        <span class="carousel-control-next-icon"></span>
-    </a>
-</div>
+    <!-- Premium Footer Without Newsletter -->
+    <footer class="custom-footer">
+        <div class="container">
+            <div class="row">
+                <!-- Links -->
+                <div class="col-md-4 footer-column">
+                    <h5 class="footer-title">QUICK LINKS</h5>
+                    <ul class="footer-links">
+                        <li><a href="Service.html">Collection</a></li>
+                        <li><a href="AboutUs.html">About Us</a></li>
+                        <li><a href="ContactUs.html">Contact Us</a></li>
+                        
+                    </ul>
+                </div>
 
-<!-- COLLECTIONS -->
-<h3 class="text-center mt-4">Collections</h3>
-<div class="container mt-4">
-    <div class="card-deck">
-        <div class="card ">
-            <img class="card-img-top" src="images/01.png" alt="Pasmina Shawls">
-            <div class="card-body text-center">
-                <h4 class="card-title">Pasmina Shawls</h4>
-                <p class="card-text">Luxury Pashmina Shawls blending tradition and modern sustainable innovation.</p>
-                <a href="Shawls.html" class="btn btn-light" >See Profile</a>
-            </div>
-        </div>
-       <div class="card ">
-            <img class="card-img-top" src="images/01.png" alt="Pasmina Shawls">
-            <div class="card-body text-center">
-                <h4 class="card-title">Pasmina Shawls</h4>
-                <p class="card-text">Luxury Pashmina Shawls blending tradition and modern sustainable innovation.</p>
-                <a href="Shawls.html" class="btn btn-light" >See Profile</a>
-            </div>
-        </div>
-       <div class="card ">
-            <img class="card-img-top" src="images/01.png" alt="Pasmina Shawls">
-            <div class="card-body text-center">
-                <h4 class="card-title">Pasmina Shawls</h4>
-                <p class="card-text">Luxury Pashmina Shawls blending tradition and modern sustainable innovation.</p>
-                <a href="Shawls.html" class="btn btn-light" >See Profile</a>
-            </div>
-        </div>
-       <div class="card ">
-            <img class="card-img-top" src="images/01.png" alt="Pasmina Shawls">
-            <div class="card-body text-center">
-                <h4 class="card-title">Pasmina Shawls</h4>
-                <p class="card-text">Luxury Pashmina Shawls blending tradition and modern sustainable innovation.</p>
-                <a href="Shawls.html" class="btn btn-light">See Profile</a>
-            </div>
-        </div>
-    </div>
-</div>
+                <!-- Contact + Social -->
+                <div class="col-md-4 footer-column">
+                    <h5 class="footer-title">CONTACT US</h5>
+                    <div class="footer-contact">
+                        <p><i class="fa-solid fa-phone"></i> +977-9845310324</p>
+                        <p><i class="fa-regular fa-envelope"></i> info@karpasanatural.com.np</p>
+                    </div>
+                     
+                </div>
 
-<!-- WHAT WE DO -->
-<!--<div class="container mt-5">
-    <h4 class="text-center mb-4">What We Do</h4>
-    <div class="row">
-        <div class="col-md-6 mb-3">
-            <div class="card p-3">
-                <h5>Handcrafted Traditional Textiles</h5>
-                <p>Karpasa Natural Industry Pvt. Ltd produces Pashmina, Allo, Banana fiber, and other traditional textiles with ethical and sustainable practices.</p>
+                <!-- Empty column to keep spacing -->
+                <div class="col-md-4 footer-column"></div>
+            </div>
+
+            <hr style="border-color: #555; margin: 30px 0;">
+
+            <!-- Copyright -->
+            <div class="row">
+                <div class="col-12 text-center" style="color:#fff; font-size:14px;">
+                    ©2025 Karpasa Natural Industry Pvt Ltd.All Rights Reserved.
+                </div>
             </div>
         </div>
-        <div class="col-md-6 mb-3">
-            <img src="images/download.jpg" alt="What We Do" class="img-fluid rounded shadow-sm">
-        </div>
-    </div>
-</div>-->
-<br>
-<!-- FOOTER -->
-<footer>
-    <div>
-        <a href="AboutUs.html">About</a>
-        <a href="ContactUs.html">Contact Us</a>
-        <a href="AboutUs.html">Mission</a>
-        <a href="AboutUs.html">FAQs</a>
-    </div>
-    <div class="footer-contact mt-2">
-        📍 BIRGUNJ, RANIGHAT-09, MADHESH PROVINCE, NEPAL<br>
-        📞 +977-9845310324 | ✉️ <a href="mailto:info@karpasanatural.com.np">info@karpasanatural.com.np</a> | 🌐 <a href="https://karpasanatural.com.np" target="_blank">karpasanatural.com.np</a>
-    </div>
-</footer>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

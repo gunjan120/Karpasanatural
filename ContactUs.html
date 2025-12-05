@@ -1,183 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Karpasa Natural</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us – Karpasa Natural</title>
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <style>
-        /* Full page height and flex layout */
         body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: #f4f6ff;
         }
 
-        /* Navbar hover effect */
-        .navbar-nav .nav-link:hover {
-            color: #ffc107 !important; /* golden hover */
-        }
-.navbar-brand img {
-            height: 40px;
-        }
-        /* Main content grows to fill space */
-        .content {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 50px 15px;
-            background: linear-gradient(135deg, #e0f7fa, #ffffff);
-        }
-
-        /* About card styling */
-        .about-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            max-width: 900px;
-            text-align: center;
-        }
-
-        .about-card h1 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            color: #00796b;
-        }
-
-        .about-card p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-        }
-
-        /* Footer styling */
-        footer {
+        /* Sliding Top Bar */
+        .top-bar {
             background: #09268A;
-            color: white;
-            padding: 25px 15px;
+            color: #fff;
             text-align: center;
+            padding: 6px 0;
+            font-size: 14px;
+            overflow: hidden;
+        }
+        .top-bar .sl {
+            white-space: nowrap;
+            animation: slide 12s linear infinite;
+            display: inline-block;
+        }
+        @keyframes slide {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
         }
 
-        footer a {
-            margin: 0 15px;
+        /* Navbar */
+        .header-logo img {
+            height: 70px;
+        }
+        @media(max-width: 768px) {
+            .header-logo img {
+                height: 55px;
+            }
+        }
+        .nav-link {
+            font-weight: 500;
+            color: #09268A !important;
+        }
+        .nav-link:hover {
+            color: #000 !important;
+        }
+
+        /* Premium Section */
+        .section {
+            padding: 70px 10%;
+            margin-top: 30px;
+        }
+
+        .premium-title {
+          
+            
+            font-weight: 650;
+           
+            
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #09268A;
+            text-shadow: 0 3px 8px rgba(0,0,0,0.6);
+            font-size: 42px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .premium-subtitle {
+            text-align: center;
+            font-size: 17px;
+            color: #555;
+            max-width: 650px;
+            margin: auto;
+            margin-bottom: 50px;
+        }
+
+        /* Premium Cards */
+        .premium-card {
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border: 1px solid rgba(255,255,255,0.4);
+            transition: 0.3s ease;
+        }
+        .premium-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .premium-icon {
+            font-size: 50px;
+            color: #09268A;
+            margin-bottom: 20px;
+        }
+
+        .premium-card strong {
+            font-size: 20px;
+            color: #09268A;
+        }
+
+        .premium-card p {
+            font-size: 16px;
+            color: #444;
+            margin-top: 10px;
+        }
+
+        /* Link */
+        .premium-card a {
+            color: #09268A;
+            font-weight: bold;
+        }
+.custom-footer {
+    background: #cad5fa;
+    padding: 60px 0;
+    color: #6b6562;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.footer-title {
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.footer-text {
+    font-size: 14px;
+    color: #7d7673;
+    line-height: 1.5;
+}
+
+/* Newsletter Box */
+.newsletter-box {
+    display: flex;
+    margin-top: 20px;
+}
+
+.newsletter-box input {
+    flex: 1;
+    padding: 14px;
+    border: 1px solid #c5c1be;
+    font-size: 14px;
+}
+
+.newsletter-box button {
+    background: #706666;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.newsletter-box button:hover {
+    background: #5b5553;
+}
+
+/* Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li a {
+    display: block;
+    color: #7d7673;
+    padding: 3px 0;
+    font-size: 14px;
+}
+
+.footer-links li a:hover {
+    text-decoration: underline;
+}
+
+/* Contact */
+.footer-contact p {
+    font-size: 14px;
+    margin: 6px 0;
+}
+
+/* Social icons */
+.footer-social i {
+    font-size: 20px;
+    margin-right: 15px;
+    color: #6b6562;
+    cursor: pointer;
+}
+
+.footer-social i:hover {
+    color: #000;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    .footer-column {
+        margin-bottom: 30px;
+    }
+}
+ /* Premium Footer Styles */
+        .custom-footer {
+            background: #09268A;
             color: #fff;
-            text-decoration: none;
+            padding: 60px 0 30px;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        .footer-title {
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #f1f1f1;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li a {
+            color: #d0d0d0;
+            font-size: 14px;
+            padding: 4px 0;
+            display: block;
             transition: color 0.3s;
         }
 
-        footer a:hover {
-            color: #ffc107;
+        .footer-links li a:hover {
+            color: #fff;
+            text-decoration: underline;
         }
 
-        .footer-contact {
-            margin-top: 15px;
-            font-size: 0.95rem;
+        .footer-contact p {
+            font-size: 14px;
+            color: #d0d0d0;
+            margin: 6px 0;
         }
 
-        .footer-contact a {
-            color: #ffc107;
+        .footer-social i {
+            font-size: 18px;
+            color: #d0d0d0;
+            margin-right: 15px;
+            transition: color 0.3s, transform 0.3s;
+            cursor: pointer;
         }
 
-        /* Optional: carousel image */
-        .carousel-inner img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
+        .footer-social i:hover {
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        @media(max-width: 768px) {
+            .footer-column {
+                margin-bottom: 30px;
+                text-align: center;
+            }
+            .footer-social {
+                justify-content: center;
+            }
         }
     </style>
 </head>
-
 <body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="sl">
+            KARPASA NATURAL INDUSTRY PVT. LTD | PREMIUM TEXTILES | HANDCRAFTED IN NEPAL
+        </div>
+    </div>
+
     <!-- Navbar -->
-  <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #09268A;">
-        <a class="navbar-brand" href="index.html">
-            <img src="images/logo.jpg" alt="Karpasa Logo">
+    <nav class="navbar navbar-expand-md" style="background:#cad5fa; border-bottom:1px solid #e6e3df;">
+        <a class="navbar-brand header-logo" href="index.html">
+            <img src="images/logo.jpg" alt="Karpasa Natural">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
+
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navMenu">
+            <i class="fa-solid fa-bars" style="font-size:25px;"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="AboutUs.html">About</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Collection</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="Shawls.html">Shawls</a>
-                        <!--<a class="dropdown-item" href="#">Link 2</a>
-                        <a class="dropdown-item" href="#">Link 3</a>-->
-                    </div>
-                </li>
-                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Services</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="Whatwedo.html">What We Do</a>
-                        <!--<a class="dropdown-item" href="#">Link 2</a>
-                        <a class="dropdown-item" href="#">Link 3</a>-->
-                    </div>
-                </li>
+
+        <div class="collapse navbar-collapse justify-content-center" id="navMenu">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li>
                 <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="Service.html">Collection</a></li>
             </ul>
         </div>
+
+        <div class="header-icons d-none d-md-flex">
+    <img src="images/flag.jpg" alt="Nepal Flag" style="height:25px; cursor:pointer;">
+</div>
     </nav>
 
-    <!-- Main content -->
-    <!-- Contact Us Section -->
-<div class="container content">
-    <div class="about-card text-center">
-        <h1>Contact Us</h1>
-        <p>We’d love to hear from you! Reach out to us using the information below.</p>
-        <div class="row mt-4">
-            <!-- Location -->
-            <div class="col-md-4 mb-3">
-                <div style="font-size:1.2rem;">
-                    📍 <strong>Address:</strong><br>
-                    BIRGUNJ, RANIGHAT-09<br>
-                    MADHESH PROVINCE, NEPAL
+    <!-- Premium Contact Section -->
+    <div class="section">
+
+        <h1 class="premium-title">CONTACT US</h1>
+        <p class="premium-subtitle">
+            We're here to assist you. Reach our team through the following premium contact channels.
+        </p>
+
+        <div class="row">
+
+            <!-- Address -->
+            <div class="col-md-4 mb-4">
+                <div class="premium-card">
+                    <div class="premium-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <strong>Our Address</strong>
+                    <p>BIRGUNJ, RANIGHAT-09<br>MADHESH PROVINCE, NEPAL</p>
                 </div>
             </div>
 
             <!-- Phone -->
-            <div class="col-md-4 mb-3">
-                <div style="font-size:1.2rem;">
-                    📞 <strong>Phone:</strong><br>
-                    +977-9845310324
+            <div class="col-md-4 mb-4">
+                <div class="premium-card">
+                    <div class="premium-icon"><i class="fa-solid fa-phone"></i></div>
+                    <strong>Phone</strong>
+                    <p>+977-9845310324</p>
                 </div>
             </div>
 
-            <!-- Email & Website -->
-            <div class="col-md-4 mb-3">
-                <div style="font-size:1.2rem;">
-                    ✉️ <strong>Email:</strong> info@karpasanatural.com.np<br>
-                    🌐 <strong>Website:</strong> <a href="https://karpasanatural.com.np" target="_blank">karpasanatural.com.np</a>
+            <!-- Email -->
+            <div class="col-md-4 mb-4">
+                <div class="premium-card">
+                    <div class="premium-icon"><i class="fa-regular fa-envelope"></i></div>
+                    <strong>Email</strong>
+                    <p>info@karpasanatural.com.np</p>
+                    <p>
+                        🌐 <a href="https://karpasanatural.com.np" target="_blank">
+                        karpasanatural.com.np</a>
+                    </p>
                 </div>
             </div>
+
         </div>
     </div>
-</div>
 
+    <!-- Your existing footer goes here -->
+     <footer class="custom-footer">
+        <div class="container">
+            <div class="row">
+                <!-- Links -->
+                <div class="col-md-4 footer-column">
+                    <h5 class="footer-title">QUICK LINKS</h5>
+                    <ul class="footer-links">
+                        <li><a href="Service.html">Collection</a></li>
+                        <li><a href="AboutUs.html">About Us</a></li>
+                        <li><a href="ContactUs.html">Contact Us</a></li>
+                        
+                    </ul>
+                </div>
 
-    <!-- Footer -->
-    <footer>
-        <div>
-            <a href="AboutUs.html">About</a>
-            <a href="ContactUs.html">Contact Us</a>
-            <a href="AboutUs.html">Mission</a>
-            <a href="AboutUs.html">FAQs</a>
-        </div>
-        <div class="footer-contact">
-            📍 BIRGUNJ, RANIGHAT-09, MADHESH PROVINCE, NEPAL<br>
-            📞 +977-9845310324 | ✉️ <a href="mailto:info@karpasanatural.com.np">info@karpasanatural.com.np</a> | 🌐 <a href="https://karpasanatural.com.np" target="_blank">karpasanatural.com.np</a>
+                <!-- Contact + Social -->
+                <div class="col-md-4 footer-column">
+                    <h5 class="footer-title">CONTACT US</h5>
+                    <div class="footer-contact">
+                        <p><i class="fa-solid fa-phone"></i> +977-9845310324</p>
+                        <p><i class="fa-regular fa-envelope"></i> info@karpasanatural.com.np</p>
+                    </div>
+                     
+                </div>
+
+                <!-- Empty column to keep spacing -->
+                <div class="col-md-4 footer-column"></div>
+            </div>
+
+            <hr style="border-color: #555; margin: 30px 0;">
+
+            <!-- Copyright -->
+            <div class="row">
+                <div class="col-12 text-center" style="color:#fff; font-size:14px;">
+                    ©2025 Karpasa Natural Industry Pvt Ltd.All Rights Reserved.
+                </div>
+            </div>
         </div>
     </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
