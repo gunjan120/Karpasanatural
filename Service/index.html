@@ -1,0 +1,302 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karpasa Natural – Collection</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+    body {
+        background: #f4f6ff;
+        font-family: "Segoe UI", sans-serif;
+    }
+
+    /* HEADER & NAVBAR (keep same as your index) */
+    .top-bar {
+        background: #09268A;
+        color: white;
+        padding: 6px 0;
+        text-align: center;
+        font-size: 14px;
+        overflow: hidden;
+    }
+
+    .sl {
+        display: inline-block;
+        white-space: nowrap;
+        animation: slide-text 12s linear infinite;
+    }
+
+    @keyframes slide-text {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+
+    .navbar {
+        background: #cad5fa !important;
+        border-bottom: 1px solid #d9d9d9;
+    }
+
+   .nav-link 
+    {
+    font-weight: 700;
+    color: #09268A !important;
+    transition: color 0.3s;
+    }
+
+.nav-link:hover 
+{
+    color: #fff !important; /* bright color to test */
+}
+ 
+
+    /* COLLECTION BANNER */
+    .banner {
+        background: url('images/mountain-banner.jpg') center/cover no-repeat;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #09268A;
+        text-shadow: 0 3px 8px rgba(0,0,0,0.6);
+        font-size: 42px;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    /* COLLECTION CARDS */
+    .collection-section {
+        padding: 1px 5%;
+    }
+
+    .collection-card {
+        background: white;
+        border-radius: 14px;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        overflow: hidden;
+        transition: 0.3s;
+        height: 100%;
+    }
+
+    .collection-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+
+    .collection-card img {
+        width: 100%;
+        height: 270px;
+        object-fit: cover;
+    }
+
+    .collection-card-body {
+        padding: 25px;
+    }
+
+    .collection-card-body h3 {
+        color: #09268A;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .collection-card-body p {
+        font-size: 15px;
+        line-height: 1.7;
+        color: #444;
+        margin-top: 10px;
+    }
+
+    /* FOOTER keep same styling */
+    /* Premium Footer Styles */
+        .custom-footer {
+            background: #09268A;
+            color: #fff;
+            padding: 60px 0 30px;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        .footer-title {
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #f1f1f1;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li a {
+            color: #d0d0d0;
+            font-size: 14px;
+            padding: 4px 0;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        .footer-links li a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .footer-contact p {
+            font-size: 14px;
+            color: #d0d0d0;
+            margin: 6px 0;
+        }
+
+        .footer-social i {
+            font-size: 18px;
+            color: #d0d0d0;
+            margin-right: 15px;
+            transition: color 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+
+        .footer-social i:hover {
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        @media(max-width: 768px) {
+            .footer-column {
+                margin-bottom: 30px;
+                text-align: center;
+            }
+            .footer-social {
+                justify-content: center;
+            }
+        }
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    <div class="sl">KARPASA NATURAL INDUSTRY PVT. LTD | FROM FABRIC TO FASHION | HANDCRAFTED IN NEPAL</div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-md" style="background:#cad5fa; border-bottom:1px solid #e6e3df;">
+    <a class="navbar-brand" href="../index.html">
+        <img src="../images/logo.jpg" height="70">
+    </a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navMenu">
+        <i class="fa-solid fa-bars" style="font-size:25px;"></i>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navMenu">
+        <ul class="navbar-nav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../AboutUs/index.html">ABOUT US</a></li>
+
+                <li class="nav-item"><a class="nav-link" href="../ContactUS/index.html">CONTACT US</a></li>
+                <li class="nav-item"><a class="nav-link" href="../Service/index.html">COLLECTION</a></li>
+            </ul>
+        </ul>
+    </div>
+
+    <div class="header-icons d-none d-md-flex">
+    <img src="../images/flag.jpg" alt="Nepal Flag" style="height:25px; cursor:pointer;">
+</div>
+</nav>
+
+<!-- COLLECTION BANNER -->
+<div class="banner">
+    OUR PREMIUM COLLECTION
+</div>
+
+<!-- COLLECTION SECTION -->
+<section class="collection-section">
+
+    <div class="row">
+
+        <!-- PASHMINA -->
+        <div class="col-md-6 mb-4">
+            <div class="collection-card">
+                <img src="../images/Chyangra.png" alt="">
+                <div class="collection-card-body">
+                    <h3>Chyangra Pashmina Textile</h3>
+                    <p>
+                        The fine Pashmina wool comes from the Himalayan Chyangra (Capra Hircus) goats of Nepal. 
+                        Nepalese artisans have woven this luxurious fiber for over a thousand years. 
+                        Known globally for its unmatched softness, warmth, and durability — Pashmina shawls 
+                        and garments are handwoven on traditional looms. Today, the silk–pashmina blend is 
+                        admired worldwide for its elegance and comfort.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- BANANA FIBER -->
+        <div class="col-md-6 mb-4">
+            <div class="collection-card">
+                <img src="../images/bananafiber.png" alt="">
+                <div class="collection-card-body">
+                    <h3>Banana Fiber Textile</h3>
+                    <p>
+                        Banana fiber is a highly durable, biodegradable and eco–friendly natural fiber 
+                        sourced from banana plant stems. Traditionally used across Asia, it has evolved 
+                        into a popular material for ready–made garments, home decor, and handicrafts. 
+                        Its natural sheen, lightweight feel, and sustainability make it a perfect 
+                        alternative to synthetic fibers.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+  <footer class="custom-footer">
+        <div class="container">
+            <div class="row">
+                <!-- Links -->
+                <div class="col-md-4 footer-column">
+                    <h5 class="footer-title">QUICK LINKS</h5>
+                    <ul class="footer-links">
+                        <li><a href="../Service/index.html">Collection</a></li>
+                        <li><a href="../AboutUs/index.html">About Us</a></li>
+                        <li><a href="../ContactUs/index.html">Contact Us</a></li>
+                        
+                    </ul>
+                </div>
+
+                <!-- Contact + Social -->
+                <div class="col-md-4 footer-column">
+                    <h5 class="footer-title">CONTACT US</h5>
+                    <div class="footer-contact">
+                        <p><i class="fa-solid fa-phone"></i> +977-9845310324</p>
+                        <p><i class="fa-regular fa-envelope"></i> info@karpasanatural.com.np</p>
+                    </div>
+                     
+                </div>
+
+                <!-- Empty column to keep spacing -->
+                <div class="col-md-4 footer-column"></div>
+            </div>
+
+            <hr style="border-color: #555; margin: 30px 0;">
+
+            <!-- Copyright -->
+            <div class="row">
+                <div class="col-12 text-center" style="color:#fff; font-size:14px;">
+                    ©2025 Karpasa Natural Industry Pvt Ltd.All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
