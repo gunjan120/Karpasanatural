@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karpasa Natural</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Google Fonts (optional for premium feel) -->
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+         body {
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", sans-serif;
+            background-color: #f4f6ff;
+        }
+        /* Top Bar */
+        .top-bar {
+            background: #09268A;
+            color: #fff;
+            text-align: center;
+            padding: 6px 0;
+            font-size: 14px;
+            overflow: hidden;
+        }
+
+        .top-bar .sl {
+            white-space: nowrap;
+            animation: slide 15s linear infinite;
+            display: inline-block;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Navbar */
+        .header-logo img {
+            height: 70px;
+        }
+        @media(max-width: 768px) {
+            .header-logo img {
+                height: 55px;
+            }
+        }
+        .nav-link {
+            font-weight: 500;
+            color: #09268A !important;
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #000 !important;
+        }
+        .header-icons img {
+            height: 24px;
+        }
+        .header-icons i {
+            font-size: 20px;
+            color: #09268A;
+            margin-left: 15px;
+            cursor: pointer;
+            transition: transform 0.3s, color 0.3s;
+        }
+        .header-icons i:hover {
+            color: #000;
+            transform: scale(1.2);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 70px 10%;
+            margin-top: 30px;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+        }
+        .section h1 {
+            font-family: "Georgia", serif;
+            font-weight: 700;
+            color: #09268A;
+            text-align: center;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+        .section p {
+            font-size: 16px;
+            color: #444;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        .custom-footer {
+            background: linear-gradient(135deg, #09268A, #0c3db1);
+            color: #fff;
+            padding: 60px 0 30px;
+            font-family: "Segoe UI", sans-serif;
+        }
+        .footer-title {
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #f1f1f1;
+            margin-bottom: 20px;
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links li a {
+            color: #d0d0d0;
+            font-size: 14px;
+            padding: 4px 0;
+            display: block;
+            transition: color 0.3s;
+        }
+        .footer-links li a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .footer-contact p {
+            font-size: 14px;
+            color: #d0d0d0;
+            margin: 6px 0;
+        }
+        .footer-social i {
+            font-size: 18px;
+            color: #d0d0d0;
+            margin-right: 15px;
+            transition: color 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+        .footer-social i:hover {
+            color: #fff;
+            transform: scale(1.1);
+        }
+        @media(max-width: 768px) {
+            .footer-column {
+                margin-bottom: 30px;
+                text-align: center;
+            }
+            .footer-social {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="sl">
+            KARPASA NATURAL INDUSTRY PVT. LTD | FROM FABRIC TO FASHION QUALITY IN EVERY FOLD | HANDCRAFTED IN NEPAL
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md" style="background:#cad5fa; border-bottom:1px solid #e6e3df;">
+        <a class="navbar-brand header-logo" href="../index.html">
+            <img src="../images/logo.jpg" alt="Karpasa Natural">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu">
+            <i class="fa-solid fa-bars" style="font-size:25px;"></i>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navMenu">
+            <ul class="navbar-nav">
+                 <li class="nav-item"><a class="nav-link" href="/AboutUs">ABOUT US</a></li>
+                <li class="nav-item"><a class="nav-link" href="../ContactUs.html">CONTACT US</a></li>
+                <li class="nav-item"><a class="nav-link" href="../Service.html">COLLECTION</a></li>
+            </ul>
+        </div>
+        <div class="header-icons d-none d-md-flex">
+    <img src="../images/flag.jpg" alt="Nepal Flag" style="height:25px; cursor:pointer;">
+</div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid mt-3">
+
+        <div class="section">
+            <h1>About Us</h1>
+            <p>
+                Karpasa Natural Industry is a genuine Nepali luxury textile manufacturer specializing in premium cotton, high-performance fabrics for fashion, silk, banana fabric, alloy, and cashmere. We blend innovation with ethical practices to redefine modern textiles. Our mission is to provide high-performance, planet-friendly textiles that empower fashion brands to reduce their environmental footprint.
+            </p>
+        </div>
+
+        <div class="section">
+            <h1>Our Mission</h1>
+            <p>
+                To promote innovation in Nepal’s plant-based and animal-based natural fiber sector, using organic and non-organic fibers for fabrics and ready-made garments, while supporting cultural heritage, economic growth, environmental sustainability, and improving livelihoods in poor communities.
+            </p>
+        </div>
+
+        <div class="section">
+            <h1>Our Commitment</h1>
+            <p>
+                We are committed to using only natural fibers in our production, including the finest wool, banana fiber, silk, and alloy. All farming is conducted ethically, ensuring no animals are harmed during the process. We take pride that all the yarns used are Oeko-Tex certified and meet the highest standards.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="custom-footer">
+        <div class="container">
+            <div class="row">
+                <!-- Links -->
+                <div class="col-md-4 footer-column">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="Service.html">Collection</a></li>
+                        <li><a href="AboutUs.html">About Us</a></li>
+                        <li><a href="ContactUs.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="col-md-4 footer-column">
+                    <h5 class="footer-title">Contact Us</h5>
+                    <div class="footer-contact">
+                        <p><i class="fa-solid fa-phone"></i> +977-9845310324</p>
+                        <p><i class="fa-regular fa-envelope"></i> info@karpasanatural.com.np</p>
+                    </div>
+                    <div class="footer-social mt-3">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                </div>
+
+                <!-- Empty column for spacing -->
+                <div class="col-md-4 footer-column"></div>
+            </div>
+
+            <hr style="border-color: rgba(255,255,255,0.3); margin: 30px 0;">
+
+            <div class="row">
+                <div class="col-12 text-center" style="font-size:14px;">
+                    ©2025 Karpasa Natural Industry Pvt Ltd. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
