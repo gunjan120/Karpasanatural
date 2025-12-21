@@ -818,14 +818,20 @@
             text-decoration: none;
         }
 
-        .newsletter-input {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: white;
-            border-radius: 8px 0 0 8px;
-            padding: 15px 20px;
-            transition: all 0.3s ease;
-        }
+          .newsletter-input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white !important; /* Forces text to be white */
+    border-radius: 8px 0 0 8px;
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+}
+
+/* Also ensure the placeholder is legible */
+.newsletter-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
 
         .newsletter-input:focus {
             background: rgba(255, 255, 255, 0.1);
@@ -1116,17 +1122,16 @@
                     <p style="color: #d0d0d0; font-size: 16px; line-height: 1.8; margin-bottom: 30px;">
                         Subscribe to receive exclusive access to new collections, artisan stories, and invitations to private events. Be the first to experience the world of Karpasa Natural.
                     </p>
-                    <div class="input-group mt-4">
-                        <input type="email" class="form-control newsletter-input" placeholder="Enter your email address">
-                        <div class="input-group-append">
-                            <button class="btn newsletter-btn" type="button">
-                                <i class="fa-solid fa-paper-plane"></i> SUBSCRIBE
-                            </button>
-                        </div>
-                    </div>
-                    <p class="mt-3" style="color: #aaa; font-size: 12px; letter-spacing: 1px;">
-                        By subscribing, you agree to our Privacy Policy
-                    </p>
+                  <form id="newsletterForm">
+    <div class="input-group mt-4">
+        <input type="email" name="email" class="form-control newsletter-input" placeholder="Enter your email address" required>
+        <div class="input-group-append">
+            <button class="btn newsletter-btn" type="submit" id="newsletterSubmitBtn">
+                <i class="fa-solid fa-paper-plane"></i> SUBSCRIBE
+            </button>
+        </div>
+    </div>
+</form>
                 </div>
             </div>
 
@@ -1258,6 +1263,41 @@ function toggleAudio() {
             if ((t /= d / 2) < 1) return c / 2 * t * t * t + b;
             return c / 2 * ((t -= 2) * t * t + 2) + b;
         };
+    </script>
+       <script>
+        
+        $(document).ready(function() {
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwRgoGTqDstm9nnbJ1-39yPazypbWdi3OYXFKizwhJylhnkKoB4XlLF-Bm8q7aa-_Dp/exec'; // Use your same /exec URL
+    const newsletterForm = document.getElementById('newsletterForm');
+    const newsBtn = $('#newsletterSubmitBtn');
+
+    $('#newsletterForm').submit(function(e) {
+        e.preventDefault();
+        
+        newsBtn.html('<i class="fa-solid fa-spinner fa-spin"></i>').prop('disabled', true);
+
+        fetch(scriptURL, { 
+            method: 'POST', 
+            body: new FormData(newsletterForm),
+            mode: 'no-cors' // Critical for GitHub Pages
+        })
+        .then(() => {
+            newsBtn.html('<i class="fa-solid fa-check"></i> SAVED');
+            newsBtn.css('background', '#28a745');
+            newsletterForm.reset();
+            
+            setTimeout(() => {
+                newsBtn.html('<i class="fa-solid fa-paper-plane"></i> SUBSCRIBE')
+                       .css('background', '')
+                       .prop('disabled', false);
+            }, 3000);
+        })
+        .catch(error => {
+            console.error('Error!', error.message);
+            newsBtn.html('TRY AGAIN').prop('disabled', false);
+        });
+    });
+}); 
     </script>
 </body>
 </html>
